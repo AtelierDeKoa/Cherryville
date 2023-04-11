@@ -4,8 +4,27 @@ using UnityEngine;
 
 public class Catchable : MonoBehaviour
 {
-    public void OnMouseDown()
+    public Material brightMaterial;
+    public Material dimMaterial;
+
+    void OnTriggerStay(Collider other)
     {
-        Destroy(this.gameObject);
+        if (Input.GetKey(KeyCode.E))
+        {
+            Destroy(this.gameObject);
+            //Meterlo en el inventario
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        transform.GetComponent<Renderer>().material = brightMaterial;
+        Debug.Log("Debería cambiar el color");
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        transform.GetComponent<Renderer>().material = dimMaterial;
+        Debug.Log("Debería volver el color original");
     }
 }

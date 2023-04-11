@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
 {
     CharacterController characterController;
     public Animator animator;
+    public GameObject characterObj;
     public bool groundedCharacter;
     float xMovement;
     float zMovement;
@@ -45,7 +46,25 @@ public class CharacterMovement : MonoBehaviour
 
         bool isWalking = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
         animator.SetBool("isWalking", isWalking);
-        
+
+        //Giro personaje
+        if (Input.GetKey(KeyCode.A))
+        {
+            characterObj.transform.localEulerAngles = new Vector3(0, -90, 0);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            characterObj.transform.localEulerAngles = new Vector3(0, 90, 0);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            characterObj.transform.localEulerAngles = new Vector3(0, 180, 0);
+        }
+        else
+        {
+            characterObj.transform.localEulerAngles = new Vector3(0, 0, 0);
+        }
+
 
         //Controlar el delay del salto
         if (jumpDelay > 0)
