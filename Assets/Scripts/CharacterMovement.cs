@@ -5,8 +5,8 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     CharacterController characterController;
-    public Animator animator;
-    public GameObject characterObj;
+    //public Animator animator;
+    //public GameObject characterObj;
     public bool groundedCharacter;
     float xMovement;
     float zMovement;
@@ -44,26 +44,26 @@ public class CharacterMovement : MonoBehaviour
             verticalSpeed = 0f;
         }
 
-        bool isWalking = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
-        animator.SetBool("isWalking", isWalking);
+        //bool isWalking = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
+        //animator.SetBool("isWalking", isWalking);
 
         //Giro personaje
-        if (Input.GetKey(KeyCode.A))
-        {
-            characterObj.transform.localEulerAngles = new Vector3(0, -90, 0);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            characterObj.transform.localEulerAngles = new Vector3(0, 90, 0);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            characterObj.transform.localEulerAngles = new Vector3(0, 180, 0);
-        }
-        else
-        {
-            characterObj.transform.localEulerAngles = new Vector3(0, 0, 0);
-        }
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    characterObj.transform.localEulerAngles = new Vector3(0, -90, 0);
+        //}
+        //else if (Input.GetKey(KeyCode.D))
+        //{
+        //    characterObj.transform.localEulerAngles = new Vector3(0, 90, 0);
+        //}
+        //else if (Input.GetKey(KeyCode.S))
+        //{
+        //    characterObj.transform.localEulerAngles = new Vector3(0, 180, 0);
+        //}
+        //else
+        //{
+        //    characterObj.transform.localEulerAngles = new Vector3(0, 0, 0);
+        //}
 
 
         //Controlar el delay del salto
@@ -81,7 +81,7 @@ public class CharacterMovement : MonoBehaviour
             //Modificaciones si pulsamos shift (correr)
             speed += 10f * Time.deltaTime;
             speed = Mathf.Min(speed, 10);
-            animator.SetBool("isRunning", true);
+            //animator.SetBool("isRunning", true);
 
         }
         else if (Input.GetKey(KeyCode.LeftControl))
@@ -102,7 +102,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 speed -= Mathf.Sign(speed - 5f) * 10f * Time.deltaTime;
             }
-            animator.SetBool("isRunning", false);
+            //animator.SetBool("isRunning", false);
             //animator.SetBool("isCrouch", false);
         }
 
@@ -111,12 +111,12 @@ public class CharacterMovement : MonoBehaviour
             //Modificacion para el salto
             jumpDelay = jumpDelayTime;
             speed = 0f;
-            animator.SetBool("isJumping", true);
+            //animator.SetBool("isJumping", true);
         }
         else
         {
             speed = 5f;
-            animator.SetBool("isJumping", false);
+            //animator.SetBool("isJumping", false);
         }
 
 
