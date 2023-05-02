@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4038931009636145598}
   - component: {fileID: 4038931009636145596}
   - component: {fileID: 4038931009636145597}
+  - component: {fileID: 6305506204969072954}
   m_Layer: 0
   m_Name: Tablita
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4038931009636145599}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.363, y: -0.266, z: -0.621}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6305506204969072954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4038931009636145599}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.07808405, z: 1.041595}
+  m_Center: {x: 1.024124, y: 0.57435703, z: -0.89641845}
 --- !u!1 &4038931010742087093
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,8 +106,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4038931010742087094}
-  - component: {fileID: 4038931010742087091}
-  - component: {fileID: 4038931010742087090}
   - component: {fileID: 4038931010742087092}
   m_Layer: 0
   m_Name: TablitaMostrador
@@ -118,32 +130,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4038931010742087091
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4038931010742087093}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5225692, y: 0.07729864, z: 1.0066953}
-  m_Center: {x: 1.0248466, y: 0.5808296, z: -0.91687727}
---- !u!65 &4038931010742087090
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4038931010742087093}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.9255767, y: 0.3806628, z: 1.098556}
-  m_Center: {x: 1.221165, y: 0.6224769, z: -0.9450996}
 --- !u!95 &4038931010742087092
 Animator:
   serializedVersion: 5

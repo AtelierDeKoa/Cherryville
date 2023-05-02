@@ -12,26 +12,25 @@ public class PuzzleUI : MonoBehaviour
 
     void Start()
     {
-        parteDelantera.SetActive(false);
-        trasera = true;
-    }
-
-    public void GoBack()
-    {
-        SceneManager.LoadScene("OutdoorsScene");
+        parteDelantera.SetActive(true);
+        parteTrasera.SetActive(false);
+        trasera = false;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Girar()
     {
-        if (trasera == true)
+        if (trasera)
         {
-            reproductor.transform.localEulerAngles = new Vector3(0, 90, 90);
+            reproductor.transform.eulerAngles = new Vector3(-90, 90, -90);
+            reproductor.transform.position = new Vector3(-4.086f, 1.186499f, 3.25f);
             parteDelantera.SetActive(true);
             parteTrasera.SetActive(false);
             trasera = false;
-        }else if(trasera == false)
+        }else
         {
-            reproductor.transform.localEulerAngles = new Vector3(180, 90, 90);
+            reproductor.transform.eulerAngles = new Vector3(90, 90, -90);
+            reproductor.transform.position = new Vector3(-4.0992f, 1.186499f, 3.25f);
             parteTrasera.SetActive(true);
             parteDelantera.SetActive(false);
             trasera = true;
