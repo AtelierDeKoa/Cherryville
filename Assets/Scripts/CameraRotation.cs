@@ -50,6 +50,14 @@ public class CameraRotation : MonoBehaviour
         posX = -mouseY;
         posY = mouseX;
 
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            transformCamera.localPosition = new Vector3(0f, 1f, -0.116f);
+        } else
+        {
+            transformCamera.localPosition = new Vector3( 0f, 1.487f, -0.116f);
+        }
+
 
         transformCamera.Rotate(posX, 0, 0);
         transformPlayer.Rotate(0, posY, 0);

@@ -19,12 +19,10 @@ public class Catchable : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         transform.GetComponent<Renderer>().material = brightMaterial;
-        Debug.Log("Debería cambiar el color");
     }
 
     private void OnTriggerExit(Collider other)
     {
         transform.GetComponent<Renderer>().material = dimMaterial;
-        Debug.Log("Debería volver el color original");
     }
 }
