@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Catchable : MonoBehaviour
 {
+    public static int itemCount = 0;
+
     public Material brightMaterial;
     public Material dimMaterial;
+    public GameObject inventoryItem;
 
     void OnTriggerStay(Collider other)
     {
         if (Input.GetKey(KeyCode.E))
         {
-            Destroy(this.gameObject);
-            //Meterlo en el inventario
+            if (inventoryItem != null)
+            {
+                itemCount++;
+                inventoryItem.SetActive(true);
+                Debug.Log(itemCount);
+            }
+            Destroy(gameObject);
         }
     }
 
