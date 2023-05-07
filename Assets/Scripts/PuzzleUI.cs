@@ -15,7 +15,6 @@ public class PuzzleUI : MonoBehaviour
         parteDelantera.SetActive(true);
         parteTrasera.SetActive(false);
         trasera = false;
-        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Girar()

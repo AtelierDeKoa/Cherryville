@@ -5,7 +5,8 @@ using UnityEngine.UIElements;
 
 public class CameraRotation : MonoBehaviour
 {
-    
+    public static bool blocked = false;
+
     float maxRotation = 45f;
     float minRotation = -35f;
 
@@ -25,13 +26,13 @@ public class CameraRotation : MonoBehaviour
     {
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         transformCamera = GetComponent<Transform>();
-        sensibility = 0.5f;
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (blocked) return;
+
         float mouseX = Input.GetAxisRaw("Mouse X") * sensibility;
         float mouseY = Input.GetAxisRaw("Mouse Y") * sensibility;
 

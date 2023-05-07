@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OutdoorsScene.unity
     guid: 8124e5870f4fd4c779e7a5f994e84ad1
-  - enabled: 1
-    path: Assets/Scenes/Puzzle.unity
-    guid: 25c52c4cd81f6f044b69baf2a67cb83f
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

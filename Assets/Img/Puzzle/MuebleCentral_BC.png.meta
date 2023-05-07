@@ -113,7 +113,7 @@ TextureImporter:
         width: 1112
         height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,6 +121,27 @@ TextureImporter:
       bones: []
       spriteID: d751d904e2e08544bbece45889a740f8
       internalID: 1564232552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MuebleCentral_BC_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1062
+        width: 356
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f05a224d084f8ce4899c438bf71da53e
+      internalID: -1774132468
       vertices: []
       indices: 
       edges: []
@@ -137,6 +158,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       MuebleCentral_BC_0: 1564232552
+      MuebleCentral_BC_1: -1774132468
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

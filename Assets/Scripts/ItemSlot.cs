@@ -14,6 +14,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     public Animator finalAnimator;
     public GameObject tabla;
     public AudioSource musicaPuzzle;
+    public List<GameObject> inventoryItemToDisable;
+    public PopUp popUp;
 
     
     public void OnDrop(PointerEventData eventData)
@@ -40,6 +42,11 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 Cursor.lockState = CursorLockMode.Locked;
                 tabla.SetActive(false);
                 musicaPuzzle.Play();
+                foreach (GameObject item in inventoryItemToDisable)
+                {
+                    item.SetActive(false);
+                }
+                popUp.Activate("Memory unlock. Mission complete.",false);
             }
         }
     }

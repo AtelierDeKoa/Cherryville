@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public static bool blocked = false;
+
     CharacterController characterController;
     //public Animator animator;
     //public GameObject characterObj;
     public bool groundedCharacter;
     float xMovement;
     float zMovement;
-    public float verticalSpeed = 0f;
-    public float shift = 0f;
-    public float speed = 5f;
-    public float jumpDelay;
-    const float jumpDelayTime = 0.5f;
-    const float gravity = -450f;
-    const float jumpForce = 150f;
+    float verticalSpeed = 0f;
+    float speed;    
+    float jumpDelay;
+    const float jumpDelayTime = 0.01f;
+    const float gravity = -200f;
+    const float jumpForce = 100f;
+    const float maxSpeed = 2f;
+    const float maxSpeedCrouch = 1f;
+    const float maxSpeedRunning = 4f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,8 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (blocked) return;
+
         //Recogemos los inputs
         xMovement = Input.GetAxis("Horizontal");
         zMovement = Input.GetAxis("Vertical");
@@ -80,7 +86,7 @@ public class CharacterMovement : MonoBehaviour
         {
             //Modificaciones si pulsamos shift (correr)
             speed += 10f * Time.deltaTime;
-            speed = Mathf.Min(speed, 10);
+            speed = Mathf.Min(speed, maxSpeedRunning);
             //animator.SetBool("isRunning", true);
 
         }
@@ -89,18 +95,18 @@ public class CharacterMovement : MonoBehaviour
             //Modificaciones si pulsamos control (agacharse)
             //animator.SetBool("isCrouch", true);
             speed -= 10f * Time.deltaTime;
-            speed = Mathf.Max(speed, 3);
+            speed = Mathf.Max(speed, maxSpeedCrouch);
 
         }
         else
         {
-            if (Mathf.Abs(5 - speed) < 10f * Time.deltaTime)
+            if (Mathf.Abs(maxSpeed - speed) < 10f * Time.deltaTime)
             {
-                speed = 5f;
+                speed = maxSpeed;
             }
             else
             {
-                speed -= Mathf.Sign(speed - 5f) * 10f * Time.deltaTime;
+                speed -= Mathf.Sign(speed - maxSpeed) * 10f * Time.deltaTime;
             }
             //animator.SetBool("isRunning", false);
             //animator.SetBool("isCrouch", false);
@@ -110,12 +116,12 @@ public class CharacterMovement : MonoBehaviour
         {
             //Modificacion para el salto
             jumpDelay = jumpDelayTime;
-            speed = 0f;
+            //speed = 0f;
             //animator.SetBool("isJumping", true);
         }
         else
         {
-            speed = 5f;
+            //speed = maxSpeed;
             //animator.SetBool("isJumping", false);
         }
 
