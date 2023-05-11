@@ -1,8 +1,8 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
@@ -15,9 +15,10 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     public GameObject tabla;
     public AudioSource musicaPuzzle;
     public List<GameObject> inventoryItemToDisable;
-    public PopUp popUp;
+    public PopUp popUpfinal;
+    public GameObject rotate;
 
-    
+
     public void OnDrop(PointerEventData eventData)
     {
         GameObject dropped = eventData.pointerDrag;
@@ -42,13 +43,15 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 Cursor.lockState = CursorLockMode.Locked;
                 tabla.SetActive(false);
                 musicaPuzzle.Play();
+                popUpfinal.FinalPopUp();
+                rotate.SetActive(false);
                 foreach (GameObject item in inventoryItemToDisable)
                 {
                     item.SetActive(false);
                 }
-                popUp.Activate("Memory unlock. Mission complete.",false);
             }
         }
     }
 
+    
 }

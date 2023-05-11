@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PopUp : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PopUp : MonoBehaviour
     public TextMeshProUGUI text;
     public AudioSource notificationPopUp;
     public bool finalPopup = false;
-
+    public Animator popUpFinalAnim;
 
     public void Awake()
     {
@@ -42,5 +43,17 @@ public class PopUp : MonoBehaviour
             yield return new WaitForSeconds(6f);
             animator.SetBool("Alert", false);
         }
+    }
+
+    public void FinalPopUp()
+    {
+        StartCoroutine(AnimFinal());
+    }
+
+    public IEnumerator AnimFinal()
+    {
+        yield return new WaitForSeconds(12f);
+        popUpFinalAnim.SetBool("Alert", true);
+        Cursor.lockState = CursorLockMode.None;
     }
 }

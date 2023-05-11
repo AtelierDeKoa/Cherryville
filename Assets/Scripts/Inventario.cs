@@ -11,12 +11,14 @@ public class Inventario : MonoBehaviour
     public bool mochilaAbierta;
     public TextMeshProUGUI popUp;
     public TextMeshProUGUI popUpInv;
+    public static bool onPuzzle;
 
     // Start is called before the first frame update
     void Start()
     {
         mochilaAbiertaImg.gameObject.SetActive(false);
         mochilaAbierta = false;
+        onPuzzle = false;
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class Inventario : MonoBehaviour
                 mochilaAbiertaImg.gameObject.SetActive(false);
                 mochilaIcon.gameObject.SetActive(true);
                 mochilaAbierta = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                if(!onPuzzle)Cursor.lockState = CursorLockMode.Locked;
                 CameraRotation.blocked = false;
                 CharacterMovement.blocked = false;
             }

@@ -39,6 +39,7 @@ public class Mostrador : MonoBehaviour
             mapaUI.SetActive(false);
             mochilaUI.SetActive(false);
             musicaAmb.Stop();
+            Inventario.onPuzzle = true;
         }
     }
 }
