@@ -12,10 +12,10 @@ public class PopUp : MonoBehaviour
     public bool finalPopup = false;
     public Animator popUpFinalAnim;
 
-    public void Awake()
-    {
-        Activate("Look for a Music Player. Press E to catch it.", false);
-    }
+    //public void Awake()
+    //{
+    //    Activate("Look for a Music Player. Press E to catch it.", false);
+    //}
 
     public void Activate(string s)
     {
@@ -43,6 +43,11 @@ public class PopUp : MonoBehaviour
             yield return new WaitForSeconds(6f);
             animator.SetBool("Alert", false);
         }
+    }
+
+    public void PopUpInicial()
+    {
+        Activate("Look for a Music Player. Press E to catch it.", false);
     }
 
     public void FinalPopUp()

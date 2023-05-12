@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public static bool blocked = false;
+    public static bool blocked = true;
 
     CharacterController characterController;
     //public Animator animator;

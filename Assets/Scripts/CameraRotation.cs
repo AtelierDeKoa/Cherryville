@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class CameraRotation : MonoBehaviour
 {
-    public static bool blocked = false;
+    public static bool blocked = true;
 
     float maxRotation = 45f;
     float minRotation = -35f;
